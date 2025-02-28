@@ -4,11 +4,9 @@ This repository contains the implementation of **Dynamic Gradient Sparsification
 
 ## Overview
 
-We utilize nnUNetv2, a popular framework for medical image segmentation, to implement a series of `nnUNetTrainer` scripts. The specific trainer used in this implementation is **nnUNetTrainer_DGST.py**. This implementation demonstrates the effectiveness of the DGST approach in improving segmentation performance with minimal labeled data.
+We utilize nnUNetv2, a popular framework for medical image segmentation, to implement a series of `nnUNetTrainer` scripts. The specific trainer used in this implementation is **nnUNetTrainer_DGST.py**. Also includes several comparison methods that do not require additional implementation, such as Bias, Affine-IN, LoRA(Implemented via the PEFT library. For installation and usage, refer to the [PEFT](https://github.com/huggingface/peft) repository), etc. 
 
 ## Installation
-
-1. Clone this repository:
 
 Ensure that you have nnUNetv2 installed. You can follow the installation instructions from the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) repository.
 
