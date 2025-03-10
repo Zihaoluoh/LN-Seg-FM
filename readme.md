@@ -73,6 +73,6 @@ If you used ResEnc, use *nnUNetv2_plan_experiment* and follow the above steps. F
 
 ## Acknowledgements
 We would like to express our gratitude to the following libraries:
-- **[nnUNet]([https://github.com/username/library1](https://github.com/MIC-DKFZ/nnUNet))**
+- **[nnUNet]([https://github.com/username/library1](https://github.com/MIC-DKFZ/nnUNet)**
 - **[MONAI](https://github.com/Project-MONAI/MONAI)**
 - **[MShub](https://github.com/Luoxd1996/MSHub)**
