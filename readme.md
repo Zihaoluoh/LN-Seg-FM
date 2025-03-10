@@ -1,24 +1,78 @@
-# Implementation of LN-Seg-FM
+# LN-Seg-FM
 
-This repository contains the implementation of **Dynamic Gradient Sparsification Training (DGST)** for few-shot fine-tuning of a lymph node (LN) segmentation foundation model (LN-Seg-FM) using nnUNetv2. The approach introduces a novel method that balances model stability and flexibility for LN segmentation tasks, which is critical for clinical applications with limited annotated data.
+This repository contains the official PyTorch implementation of the paper [Dynamic Gradient Sparsification Training for Few-Shot Fine-tuning of CT Lymph Node Segmentation Foundation Model
+](https://arxiv.org/abs/2503.00748) for few-shot fine-tuning of a lymph node (LN) segmentation foundation model (LN-Seg-FM) using nnUNetv2. The approach introduces a novel method that balances model stability and flexibility for LN segmentation tasks, which is critical for clinical applications with limited annotated data.
 
 ## Overview
 
-We utilize nnUNetv2, a popular framework for medical image segmentation, to implement a series of `nnUNetTrainer` scripts. The specific trainer used in this implementation is **nnUNetTrainer_DGST.py**. Also includes several comparison methods that do not require additional implementation, such as Bias, Affine-IN, LoRA(Implemented via the PEFT library. For installation and usage, refer to the [PEFT](https://github.com/huggingface/peft) repository), etc. 
+We utilize nnUNetv2, a popular framework for medical image segmentation, to implement a series of `nnUNetTrainer` scripts. The specific trainer used in this implementation is **nnUNetTrainer_DGST.py**. Also includes several comparison methods that do not require additional implementation, such as Bias, Affine-IN, LoRA(Implemented via the PEFT library. For installation and usage, refer to the [peft](https://github.com/huggingface/peft) repository), etc. 
 
-## Installation
-
-Ensure that you have nnUNetv2 installed. You can follow the installation instructions from the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) repository.
+## Requirements
+CUDA 12.4<br />
+Python 3.11<br /> 
+Pytorch 2.4.1<br />
+CuDNN 9.1.0.70
+MONAI 1.3.0
+peft 0.14.0
 
 ## Usage
 
-Transfer the custom trainer files into the nnUNetv2/training/nnUNetTrainer directory:
+### Installation
+
+Please make sure that you have nnUNetv2 installed. Follow the installation instructions in the [nnUNetv2](https://github.com/MIC-DKFZ/nnUNet) repository.
+* Clone this repo.
+```
+git clone https://github.com/Zihaoluoh/LN-Seg-FM.git
+cd LN-Seg-FM
+```
+Transfer the custom trainer files into the your nnUNetv2/training/nnUNetTrainer directory:
+```
 bash
 mv nnUNetTrainer_DGST.py /path/to/nnUNetv2/training/nnUNetTrainer/
+```
 Train the model using the nnUNetv2_train -tr command, specifying the trainer:
+```
 bash nnUNetv2_train -tr nnUNetTrainer_DGST ...
+```
 
 ## Dataset
 
 The dataset used for training and evaluation consists of 36,106 annotated visible lymph nodes (LNs) across 3,346 publicly available head-and-neck CT scans [RADCURE](https://www.cancerimagingarchive.net/collection/radcure). The annotated visible lymph nodes mask will be publicly available upon acceptance.
 
+## Pre-trained models
+We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [nnUNetTrainer_SwinUNETR](LN-Seg-FM/nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal verification of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)).
+| Model Name        | Dice Score          | Approximate Training Time (per 250 iterations) |
+|-------------------|---------------------|------------------------------------|
+| nnUNet          | 81.72%                | ~53.8 seconds                      |
+| ResEncM           | 81.44%                | ~74.5 seconds                         |
+| ResEncML           | 83.55%                | ~203.2 seconds                         |
+| SwinUNETR           | 80.52%                | ~126.9 seconds                         |
+| SwinUNETRv2           | 80.97%                | ~131.4 seconds                         |
+
+When you use our pre-trained weights, please modify the *architecture* in *nnUNetPlans.json* of the corresponding dataset under your nnUNet_preprocess path to be consistent with our model. Usually we recommend the following steps:
+```
+"your_new_configuration": {
+            "inherits_from": "3d_fullres",
+            "patch_size": [
+                80,
+                112, #adjust with your dataset#
+                214
+            ],
+            "architecture": {
+            #Copy here#
+            }
+        },
+```
+Then, you can train with our nnUNet pre-trained weights:
+
+```
+nnUNetv2_train DATASETID your_new_configuration -pretrained_weights
+```
+
+If you used ResEnc, use *nnUNetv2_plan_experiment* and follow the above steps. For SwinUNETR and SwinUNETRv2, we define the model under *build_network_architecture*.
+
+## Acknowledgements
+We would like to express our gratitude to the following libraries:
+- **[nnUNet]([https://github.com/username/library1](https://github.com/MIC-DKFZ/nnUNet))**
+- **[MONAI](https://github.com/Project-MONAI/MONAI)**
+- **[MShub](https://github.com/Luoxd1996/MSHub)**
