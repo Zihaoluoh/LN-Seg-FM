@@ -41,13 +41,13 @@ The dataset used for training and evaluation consists of 36,106 annotated visibl
 
 ## Pre-trained models
 We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [nnUNetTrainer_SwinUNETR](nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal verification of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)|[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)).
-| Model Name        | Dice Score          | Approximate Training Time (per 250 iterations) |
-|-------------------|---------------------|------------------------------------|
-| nnUNet          | 81.72%                | ~53.8 seconds                      |
-| ResEncM           | 81.44%                | ~74.5 seconds                         |
-| ResEncL           | 83.55%                | ~203.2 seconds                         |
-| SwinUNETR           | 80.52%                | ~126.9 seconds                         |
-| SwinUNETRv2           | 80.97%                | ~131.4 seconds                         |
+| Model Name        | Dice Score          | Approximate Training Time (per 250 iterations) | VRAM Use(GB) |
+|-------------------|---------------------|------------------------------------|--------------|
+| nnUNet          | 81.72%                | ~53.8 seconds                      | ~7.9 GBs  |
+| ResEncM           | 81.44%                | ~74.5 seconds                         | ~8.6 GBs|
+| ResEncL           | 83.55%                | ~203.2 seconds                         | ~22.6 GBs |
+| SwinUNETR           | 80.52%                | ~126.9 seconds                         | ~15.9 GBs|
+| SwinUNETRv2           | 80.97%                | ~131.4 seconds                         | ~14.5 GBs |
 
 When you use our pre-trained weights, please modify the *architecture* in *nnUNetPlans.json* of the corresponding dataset under your nnUNet_preprocess path to be consistent with our model. Usually we recommend the following steps:
 ```
