@@ -40,7 +40,7 @@ bash nnUNetv2_train -tr nnUNetTrainer_DGST ...
 The dataset used for training and evaluation consists of 36,106 annotated visible lymph nodes (LNs) across 3,346 publicly available head-and-neck CT scans [RADCURE](https://www.cancerimagingarchive.net/collection/radcure). The annotated visible lymph nodes mask will be publicly available upon acceptance.
 
 ## Pre-trained models
-We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [nnUNetTrainer_SwinUNETR](LN-Seg-FM/nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal verification of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)|[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)).
+We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [nnUNetTrainer_SwinUNETR](nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal verification of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)|[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)).
 | Model Name        | Dice Score          | Approximate Training Time (per 250 iterations) |
 |-------------------|---------------------|------------------------------------|
 | nnUNet          | 81.72%                | ~53.8 seconds                      |
