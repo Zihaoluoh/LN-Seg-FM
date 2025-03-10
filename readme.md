@@ -11,9 +11,9 @@ We utilize nnUNetv2, a popular framework for medical image segmentation, to impl
 CUDA 12.4<br />
 Python 3.11<br /> 
 Pytorch 2.4.1<br />
-CuDNN 9.1.0.70
-MONAI 1.3.0
-peft 0.14.0
+CuDNN 9.1.0.70<br />
+MONAI 1.3.0<br />
+peft 0.14.0<br />
 
 ## Usage
 
