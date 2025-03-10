@@ -12,9 +12,9 @@ CUDA 12.4<br />
 Python 3.11<br /> 
 Pytorch 2.4.1<br />
 CuDNN 9.1.0.70<br />
-MONAI 1.3.0<br />
+monai 1.3.0<br />
 peft 0.14.0<br />
-
+nnunetv2 2.5.1<br />
 ## Usage
 
 ### Installation
