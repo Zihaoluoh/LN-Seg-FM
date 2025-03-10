@@ -25,14 +25,14 @@ Please make sure that you have nnUNetv2 installed. Follow the installation instr
 git clone https://github.com/Zihaoluoh/LN-Seg-FM.git
 cd LN-Seg-FM
 ```
-Transfer the custom trainer files into the your nnUNetv2/training/nnUNetTrainer directory:
+Transfer the custom trainer files into your nnUNetv2/training/nnUNetTrainer directory:
 ```
 bash
 mv nnUNetTrainer_DGST.py /path/to/nnUNetv2/training/nnUNetTrainer/
 ```
 Train the model using the nnUNetv2_train -tr command, specifying the trainer:
 ```
-bash nnUNetv2_train -tr nnUNetTrainer_DGST ...
+nnUNetv2_train -tr nnUNetTrainer_DGST ...
 ```
 
 ## Dataset
@@ -40,7 +40,7 @@ bash nnUNetv2_train -tr nnUNetTrainer_DGST ...
 The dataset used for training and evaluation consists of 36,106 annotated visible lymph nodes (LNs) across 3,346 publicly available head-and-neck CT scans [RADCURE](https://www.cancerimagingarchive.net/collection/radcure). The annotated visible lymph nodes mask will be publicly available upon acceptance.
 
 ## Pre-trained models
-We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [nnUNetTrainer_SwinUNETR](nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal validation of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)|[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)).
+We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [`nnUNetTrainer_SwinUNETR`](nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal validation of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)|[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)).
 | Model Name        | Dice Score          | Approximate Training Time (per 250 iterations) | VRAM Use(GB) |
 |-------------------|---------------------|------------------------------------|--------------|
 | nnUNet          | 81.72%                | ~53.8 seconds                      | ~7.9 GBs  |
@@ -49,7 +49,7 @@ We provide pre-trained weights for multiple models with different structures, in
 | SwinUNETR           | 80.52%                | ~126.9 seconds                         | ~15.9 GBs|
 | SwinUNETRv2           | 80.97%                | ~131.4 seconds                         | ~14.5 GBs |
 
-When you use our pre-trained weights, please modify the *architecture* in *nnUNetPlans.json* of the corresponding dataset under your nnUNet_preprocess path to be consistent with our model. Usually we recommend the following steps:
+When you use our pre-trained weights, please modify the `architecture` in `nnUNetPlans.json` of the corresponding dataset under your nnUNet_preprocess path to be consistent with our model. Usually we recommend the following steps:
 ```
 "your_new_configuration": {
             "inherits_from": "3d_fullres",
@@ -69,7 +69,7 @@ Then, you can train with our nnUNet pre-trained weights:
 nnUNetv2_train DATASETID your_new_configuration -pretrained_weights
 ```
 
-If you used ResEnc, use *nnUNetv2_plan_experiment* and follow the above steps. For SwinUNETR and SwinUNETRv2, we define the model under *build_network_architecture*.
+If you used ResEnc, use `nnUNetv2_plan_experiment` and follow the above steps. For SwinUNETR and SwinUNETRv2, we define the model under `build_network_architecture`.
 
 ## Acknowledgements
 We would like to express our gratitude to the following libraries:
