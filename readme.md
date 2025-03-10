@@ -3,12 +3,12 @@
 This repository contains the official PyTorch implementation of the paper [Dynamic Gradient Sparsification Training for Few-Shot Fine-tuning of CT Lymph Node Segmentation Foundation Model
 ](https://arxiv.org/abs/2503.00748) for few-shot fine-tuning of a lymph node (LN) segmentation foundation model (LN-Seg-FM) using nnUNetv2. The approach introduces a novel method that balances model stability and flexibility for LN segmentation tasks, which is critical for clinical applications with limited annotated data.
 
-@article{luo2025dynamic,
-  title={Dynamic Gradient Sparsification Training for Few-Shot Fine-tuning of CT Lymph Node Segmentation Foundation Model},
-  author={Luo, Zihao and Gao, Zijun and Liao, Wenjun and Zhang, Shichuan and Wang, Guotai and Luo, Xiangde},
-  journal={arXiv preprint arXiv:2503.00748},
-  year={2025}
-}
+    @article{luo2025dynamic,
+      title={Dynamic Gradient Sparsification Training for Few-Shot Fine-tuning of CT Lymph Node Segmentation Foundation Model},
+      author={Luo, Zihao and Gao, Zijun and Liao, Wenjun and Zhang, Shichuan and Wang, Guotai and Luo, Xiangde},
+      journal={arXiv preprint arXiv:2503.00748},
+      year={2025}
+    }
  
 ## Overview
 
