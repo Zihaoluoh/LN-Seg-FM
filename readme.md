@@ -6,7 +6,7 @@ This repository contains the official PyTorch implementation of the paper [Dynam
 ## Overview
 
 We utilize nnUNetv2, a popular framework for medical image segmentation, to implement a series of `nnUNetTrainer` scripts. The specific trainer used in this implementation is **nnUNetTrainer_DGST.py**. Also includes several comparison methods that do not require additional implementation, such as Bias, Affine-IN, LoRA(Implemented via the PEFT library. For installation and usage, refer to the [peft](https://github.com/huggingface/peft) repository), etc. 
-
+![Framework](framework.png)
 ## Requirements
 CUDA 12.4<br />
 Python 3.11<br /> 
