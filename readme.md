@@ -2,7 +2,15 @@
 
 This repository contains the official PyTorch implementation of the paper [Dynamic Gradient Sparsification Training for Few-Shot Fine-tuning of CT Lymph Node Segmentation Foundation Model
 ](https://arxiv.org/abs/2503.00748) for few-shot fine-tuning of a lymph node (LN) segmentation foundation model (LN-Seg-FM) using nnUNetv2. The approach introduces a novel method that balances model stability and flexibility for LN segmentation tasks, which is critical for clinical applications with limited annotated data.
-
+	@inproceedings{luo2021semi,
+	  title={Semi-supervised Medical Image Segmentation through Dual-task Consistency},
+	  author={Luo, Xiangde and Chen, Jieneng and Song, Tao and Wang, Guotai},
+	  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+	  volume={35},
+	  number={10},
+	  pages={8801--8809},
+	  year={2021}
+	}
 ## Overview
 
 We utilize nnUNetv2, a popular framework for medical image segmentation, to implement a series of `nnUNetTrainer` scripts. The specific trainer used in this implementation is **nnUNetTrainer_DGST.py**. Also includes several comparison methods that do not require additional implementation, such as Bias, Affine-IN, LoRA(Implemented via the PEFT library. For installation and usage, refer to the [peft](https://github.com/huggingface/peft) repository), etc. 
