@@ -45,7 +45,7 @@ We provide pre-trained weights for multiple models with different structures, in
 |-------------------|---------------------|------------------------------------|
 | nnUNet          | 81.72%                | ~53.8 seconds                      |
 | ResEncM           | 81.44%                | ~74.5 seconds                         |
-| ResEncML           | 83.55%                | ~203.2 seconds                         |
+| ResEncL           | 83.55%                | ~203.2 seconds                         |
 | SwinUNETR           | 80.52%                | ~126.9 seconds                         |
 | SwinUNETRv2           | 80.97%                | ~131.4 seconds                         |
 
