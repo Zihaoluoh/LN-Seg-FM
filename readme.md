@@ -50,10 +50,10 @@ The dataset used for training and evaluation consists of 36,106 annotated visibl
 We provide pre-trained weights for multiple models with different structures, including the original nnUNet, ResEncM nnUNet, ResEncL nnUNet, SwinUNETR and SwinUNETRv2(both implemented with MONAI; see [`nnUNetTrainer_SwinUNETR`](nnUNetTrainer/nnUNetTrainer_SwinUNETR.py). Our internal validation of the original data is as follows. You can choose the model to use according to your needs([Google Drive](https://drive.google.com/drive/folders/1ydvmX6tneDdvVUqWF7o8d_C0HJMf9v3c?usp=sharing)|[Baidu Drive](https://pan.baidu.com/s/1mmooYfYawXexUlU87bfZ1A?pwd=LNFM)), our experiments were conducted on a cluster with 8 NVIDIA Tesla V100S 32GB GPUs, and all the models are trained with 2000 epochs(250 interactions per epoch).
 | Model Name        | Dice Score          |Training Time (per 250 iterations) | VRAM Use(GB) |
 |-------------------|---------------------|------------------------------------|--------------|
-| nnUNet          | 81.72%                | ~53.8 seconds                      | ~7.9 GBs  |
-| ResEncM           | 81.44%                | ~74.5 seconds                         | ~8.6 GBs|
-| ResEncL           | 83.55%                | ~203.2 seconds                         | ~22.6 GBs |
-| ResEncXL**           | 83.79%                | ~206.1 seconds                         | ~21.3 GBs |
+| nnU-Net (org.)          | 81.72%                | ~53.8 seconds                      | ~7.9 GBs  |
+| nnU-Net ResEnc M           | 81.44%                | ~74.5 seconds                         | ~8.6 GBs|
+| nnU-Net ResEnc L           | 83.55%                | ~203.2 seconds                         | ~22.6 GBs |
+| nnU-Net ResEnc XL**           | 83.79%                | ~206.1 seconds                         | ~21.3 GBs |
 | SwinUNETR           | 80.52%                | ~126.9 seconds                         | ~15.9 GBs|
 | SwinUNETRv2           | 80.97%                | ~131.4 seconds                         | ~14.5 GBs |
 
