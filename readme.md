@@ -56,6 +56,7 @@ We provide pre-trained weights for multiple models with different structures, in
 | ResEncXL**           | 83.79%                | ~206.1 seconds                         | ~21.3 GBs |
 | SwinUNETR           | 80.52%                | ~126.9 seconds                         | ~15.9 GBs|
 | SwinUNETRv2           | 80.97%                | ~131.4 seconds                         | ~14.5 GBs |
+
 \** denotes data-distributed training across two GPUs, with the VRAM usage displayed for each.
 When you use our pre-trained weights, please modify the `architecture` in `nnUNetPlans.json` of the corresponding dataset under your nnUNet_preprocess path to be consistent with our model. Usually we recommend the following steps:
 ```
