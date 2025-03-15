@@ -53,7 +53,7 @@ We provide pre-trained weights for multiple models with different structures, in
 | nnU-Net (org.)          | 81.72%                | ~53.8 seconds                      | ~7.9 GBs  |
 | nnU-Net ResEnc M           | 81.44%                | ~74.5 seconds                         | ~8.6 GBs|
 | nnU-Net ResEnc L           | 83.55%                | ~203.2 seconds                         | ~22.6 GBs |
-| nnU-Net ResEnc XL**           | 83.79%                | ~206.1 seconds                         | ~21.3 GBs |
+| nnU-Net ResEnc XL**           | 83.78%                | ~206.1 seconds                         | ~21.3 GBs |
 | SwinUNETR           | 80.52%                | ~126.9 seconds                         | ~15.9 GBs|
 | SwinUNETRv2           | 80.97%                | ~131.4 seconds                         | ~14.5 GBs |
 
