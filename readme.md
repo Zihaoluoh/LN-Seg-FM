@@ -65,7 +65,7 @@ When you use our pre-trained weights, please modify the `architecture` in `nnUNe
             "patch_size": [
                 80,
                 112, #adjust with your dataset#
-                214
+                224
             ],
             "architecture": {
             #Copy here#
